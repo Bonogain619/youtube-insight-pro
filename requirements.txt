@@ -5,3 +5,4 @@ isodate
 youtube-transcript-api
 openai
 requests
+plotly
