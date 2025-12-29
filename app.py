@@ -188,12 +188,12 @@ with st.sidebar:
     vtype = st.selectbox("영상 타입", ["any", "video", "shorts"])
     order = st.selectbox("정렬 기준", ["viewCount", "date", "rating"])
     if st.button("🚀 분석 시작", type="primary"):
-            if not k1:
-                 st.error("YouTube API 키를 입력하세요.")
-            elif not q:
-                 st.warning("검색 키워드를 입력해주세요!")
-        else:
-                 yt = get_youtube(k1)
+	if not k1:
+		st.error("YouTube API 키를 입력하세요.")
+	elif not q:
+		st.warning("검색 키워드를 입력해주세요!")
+	else:
+		yt = get_youtube(k1)
             if yt:
                 pub_date = calc_date_filter(date_opt)
                 with st.spinner("데이터 분석 중..."):
