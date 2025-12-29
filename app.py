@@ -189,9 +189,9 @@ with st.sidebar:
     order = st.selectbox("정렬 기준", ["viewCount", "date", "rating"])
 if st.sidebar.button("🚀 분석 시작", type="primary"):
     if not k1:
-        st.error("YouTube API 키를 입력하세요.")
+        st.sidebar.error("YouTube API 키를 입력하세요.")
     elif not q:
-        st.warning("검색 키워드를 입력해주세요!")
+        st.sidebar.warning("검색 키워드를 입력해주세요!")
     else:
         yt = get_youtube(k1)
         if yt:
