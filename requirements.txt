@@ -1,7 +1,7 @@
 streamlit
-google-api-python-client
 pandas
+google-api-python-client
 isodate
+youtube-transcript-api
 openai
 requests
-openpyxl
