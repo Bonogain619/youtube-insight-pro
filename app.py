@@ -181,7 +181,7 @@ with st.sidebar:
     
     st.divider()
     st.header("🔍 검색 필터")
-    q = st.text_input("검색 키워드", value="AI 영상 편집")
+    q = st.text_input("검색 키워드", placeholder="예: 스마트폰 영상 편집", key="search_query_input")
     ch_input = st.text_input("특정 채널 검색 (선택)", placeholder="예: 김작가TV")
     
     date_opt = st.selectbox("📅 조회 기간", ["전체", "최근 1년", "최근 6개월", "최근 3개월", "최근 1개월"])
@@ -189,10 +189,12 @@ with st.sidebar:
     order = st.selectbox("정렬 기준", ["viewCount", "date", "rating"])
     
     if st.button("🚀 분석 시작", type="primary"):
-        if not k1:
-            st.error("YouTube API 키를 입력하세요.")
-        else:
-            yt = get_youtube(k1)
+        if not k1:
+            st.error("YouTube API 키를 입력하세요.")
+        elif not q:
+            st.warning("검색 키워드를 입력해주세요!")
+        else:
+            yt = get_youtube(k1)
             if yt:
                 pub_date = calc_date_filter(date_opt)
                 with st.spinner("데이터 분석 중..."):
