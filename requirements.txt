@@ -7,4 +7,5 @@ openai
 requests
 google-generativeai==0.8.6
 xlsxwriter
+youtube-transcript-api
 python-docx
