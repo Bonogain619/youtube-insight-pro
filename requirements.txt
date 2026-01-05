@@ -3,7 +3,8 @@ google-api-python-client
 pandas
 plotly
 isodate
+openai
 requests
-google-generativeai>=0.7.0
+google-generativeai==0.8.6
 xlsxwriter
 python-docx
